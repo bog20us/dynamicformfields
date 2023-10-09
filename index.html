@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <!-- font awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="static/css/AdminLTE.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- custom styling -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+     <!-- <script src="static/js/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <title>Dynamically add or remove form input fields using jQuery - bootstrapfriendly</title>
+
+----------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Website</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="container">
+			<form action="" class="m-auto" style="max-width:600px">
+				<h3 class="my-4">Information validation</h3>
+				<div class="form-group mb-3 row"><label for="email-only-gmail-addresses-are-accepted1" class="col-md-5 col-form-label">Email *only Gmail addresses are accepted</label>
+					<div class="col-md-7"><input type="email" class="form-control" id="email-only-gmail-addresses-are-accepted1" name="email-only-gmail-addresses-are-accepted"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="first-name2" class="col-md-5 col-form-label">First name</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="first-name2" name="first-name"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="last-name3" class="col-md-5 col-form-label">Last name</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="last-name3" name="last-name"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="phone-enter-the-phone-number-in-the-form-0712345678-only-mobile-phone-numbers-registered-with-mobile-phone-operators-in-romania-orange4" class="col-md-5 col-form-label">Phone *enter the phone number in the form: 0712345678. Only mobile phone numbers registered with mobile phone operators in Romania (Orange</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="phone-enter-the-phone-number-in-the-form-0712345678-only-mobile-phone-numbers-registered-with-mobile-phone-operators-in-romania-orange4" name="phone-enter-the-phone-number-in-the-form-0712345678-only-mobile-phone-numbers-registered-with-mobile-phone-operators-in-romania-orange"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="validate-contact-details5" class="col-md-5 col-form-label"></label>
+					<div class="col-md-7"><button class="btn btn-primary" type="submit">Validate contact details!</button></div>
+				</div>
+				<h4 class="my-4">Validation</h4>
+				<div class="form-group mb-3 row"><label for="enter-the-code-received-by-email7" class="col-md-5 col-form-label">Enter the code received by email*</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="enter-the-code-received-by-email7" name="enter-the-code-received-by-email"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="enter-the-code-received-by-sms8" class="col-md-5 col-form-label">Enter the code received by sms*</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="enter-the-code-received-by-sms8" name="enter-the-code-received-by-sms"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="validates9" class="col-md-5 col-form-label"></label>
+					<div class="col-md-7"><button class="btn btn-primary" type="submit">Validates!</button></div>
+				</div>
+				<h4 class="my-4">Contact address information!</h4>
+				<div class="form-group mb-3 row"><label for="county-sector11" class="col-md-5 col-form-label">County / Sector</label>
+					<div class="col-md-7"><select class="form-select custom-select" id="county-sector11">
+							<option>option #1</option>
+							<option> option #2</option>
+							<option> option #3</option>
+						</select></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="town12" class="col-md-5 col-form-label">Town</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="town12" name="town"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="street13" class="col-md-5 col-form-label">Street</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="street13" name="street"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="street-number14" class="col-md-5 col-form-label">Street number</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="street-number14" name="street-number"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="remaining-details-address-block15" class="col-md-5 col-form-label">Remaining details address (block</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="remaining-details-address-block15" name="remaining-details-address-block"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="postal-code16" class="col-md-5 col-form-label">Postal code</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="postal-code16" name="postal-code"></div>
+				</div>
+				<hr class="my-4" />
+				<h4 class="my-4">INFORMATION ABOUT THE NEW COMPANY</h4>
+				<div class="form-group mb-3 row"><label for="desired-company-name19" class="col-md-5 col-form-label">Desired Company Name</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="desired-company-name19" name="desired-company-name"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="alternative-company-name20" class="col-md-5 col-form-label">Alternative Company Name</label>
+					<div class="col-md-7"><input type="text" class="form-control" id="alternative-company-name20" name="alternative-company-name"></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="select-the-end-of-the-company21" class="col-md-5 col-form-label">Select the end of the company*</label>
+					<div class="col-md-7"><select class="form-select custom-select" id="select-the-end-of-the-company21">
+							<option>option #1</option>
+							<option> option #2</option>
+							<option> option #3</option>
+						</select></div>
+				</div>
+				<div class="form-group mb-3 row"><label for="specific-company-type22" class="col-md-5 col-form-label">Specific Company Type</label>
+					<div class="col-md-7">
+						<div class="form-check custom-control custom-radio"><input class="form-check-input custom-control-input" type="radio" name="specific-company-type" id="specific-company-type22_2" checked value="LLC"><label class="form-check-label custom-control-label" for="specific-company-type22_2">LLC</label></div>
+						<div class="form-check custom-control custom-radio"><input class="form-check-input custom-control-input" type="radio" name="specific-company-type" id="specific-company-type22_3" value=" Close LLC"><label class="form-check-label custom-control-label" for="specific-company-type22_3"> Close LLC</label></div>
+					</div>
+				</div>
+				<hr class="my-4" />
+				<h4 class="my-4">Management Information</h4>
+			</form>
+		</div>
+	</body>
+
+</html>
+
+Management Information -------------------------------------------------------------------------------
+</form>
+  </head>
+  <body >
+     
+<div class="container py-4">
+ <div class="row">
+      <div class="col-md-12 form_sec_outer_task border ">
+        <div class="row">
+          <div class="col-md-12 bg-light p-2 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6" >
+                    <h4 class="frm_section_n">MEMBRI</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Membri</label>
+          </div>
+          <div class="col-md-4">
+            <label> Type </label>
+          </div>
+        </div>
+        <div class="col-md-12 p-0">
+          <div class="col-md-12 form_field_outer p-0">
+            <div class="row form_field_outer_row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control w_90" name="Nume membru[]" id="membru_no_1" placeholder="Prenume" />
+              </div>
+	      <div class="form-group col-md-7">
+                <input type="text" class="form-control w_90" name="Prenume[]" id="membru_no_2" placeholder="Nume" />
+              </div>
+              <div class="form-group col-md-4">
+                <select name="no_type[]" id="no_type_1" class="form-control" >
+                  <option>--Select type--</option>
+                 <option>100%</option>
+ <option>99%</option>
+ <option>98%</option>
+ <option>97%</option>
+ <option>96%</option>
+ <option>95%</option>
+ <option>94%</option>
+ <option>93%</option>
+ <option>92%</option>
+ <option>91%</option>
+ <option>90%</option>
+ <option>89%</option>
+ <option>88%</option>
+ <option>87%</option>
+ <option>86%</option>
+ <option>85%</option>
+ <option>84%</option>
+ <option>83%</option>
+ <option>82%</option>
+ <option>81%</option>
+ <option>80%</option>
+ <option>79%</option>
+ <option>78%</option>
+ <option>77%</option>
+ <option>76%</option>
+ <option>75%</option>
+ <option>74%</option>
+ <option>73%</option>
+ <option>72%</option>
+ <option>71%</option>
+ <option>70%</option>
+ <option>69%</option>
+ <option>68%</option>
+ <option>67%</option>
+ <option>66%</option>
+ <option>65%</option>
+ <option>64%</option>
+ <option>63%</option>
+ <option>62%</option>
+ <option>61%</option>
+ <option>60%</option>
+ <option>59%</option>
+ <option>58%</option>
+ <option>57%</option>
+ <option>56%</option>
+ <option>55%</option>
+ <option>54%</option>
+ <option>53%</option>
+ <option>52%</option>
+ <option>51%</option>
+ <option>50%</option>
+ <option>49%</option>
+ <option>48%</option>
+ <option>47%</option>
+ <option>46%</option>
+ <option>45%</option>
+ <option>44%</option>
+ <option>43%</option>
+ <option>42%</option>
+ <option>41%</option>
+ <option>40%</option>
+ <option>39%</option>
+ <option>38%</option>
+ <option>37%</option>
+ <option>36%</option>
+ <option>35%</option>
+ <option>34%</option>
+ <option>33%</option>
+ <option>32%</option>
+ <option>31%</option>
+ <option>30%</option>
+ <option>29%</option>
+ <option>28%</option>
+ <option>27%</option>
+ <option>26%</option>
+ <option>25%</option>
+ <option>24%</option>
+ <option>23%</option>
+ <option>22%</option>
+ <option>21%</option>
+ <option>20%</option>
+ <option>19%</option>
+ <option>18%</option>
+ <option>17%</option>
+ <option>16%</option>
+ <option>15%</option>
+ <option>14%</option>
+ <option>13%</option>
+ <option>12%</option>
+ <option>11%</option>
+ <option>10%</option>
+ <option>9%</option>
+ <option>8%</option>
+ <option>7%</option>
+ <option>6%</option>
+ <option>5%</option>
+ <option>4%</option>
+ <option>3%</option>
+ <option>2%</option>
+ <option>1%</option>
+ <option>0%</option>
+
+                </select>
+              </div>
+<body
+<h3>Show a file-select field which allows multiple files:</h3>
+<form action="/action_page.php">
+  <label for="myfile">Add foto ID:</label>
+  <input type="file" id="myfile" name="myfile" multiple><br><br>
+</form>
+</body>
+              <div class="form-group col-md-2 add_del_btn_outer">
+                <button class="btn_round add_node_btn_frm_field" title="Copy or clone this row">
+                  <i class="fas fa-copy"></i>
+                </button>
+
+                <button class="btn_round remove_node_btn_frm_field" disabled>
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ </div>
+</div>
+---------------------------------------------------
+<div class="container py-4">
+ <div class="row">
+      <div class="col-md-12 form_sec_outer_task border ">
+        <div class="row">
+          <div class="col-md-12 bg-light p-2 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6" >
+                    <h4 class="frm_section_n">MENEGERI</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Membru</label>
+          </div>
+          <div class="col-md-4">
+            <label> Type </label>
+          </div>
+        </div>
+        <div class="col-md-12 p-0">
+          <div class="col-md-12 form_field_outer p-0">
+            <div class="row form_field_outer_row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control w_90" name="Nume membru[]" id="membru_no_1" placeholder="Prenume" />
+              </div>
+	      <div class="form-group col-md-7">
+                <input type="text" class="form-control w_90" name="Prenume[]" id="membru_no_2" placeholder="Nume" />
+              </div>
+
+                 <body
+<h3>Show a file-select field which allows multiple files:</h3>
+<form action="/action_page.php">
+  <label for="myfile">Add foto ID:</label>
+  <input type="file" id="myfile" name="myfile" multiple><br><br>
+</form>
+</body>
+              <div class="form-group col-md-2 add_del_btn_outer">
+                <button class="btn_round add_node_btn_frm_field" title="Copy or clone this row">
+                  <i class="fas fa-copy"></i>
+                </button>
+
+                <button class="btn_round remove_node_btn_frm_field" disabled>
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ </div>
+</div>
+
+-------------------------------------------------
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+    $("body").on("click",".add_new_frm_field_btn", function (){ 
+      console.log("clicked");
+      var index = $(".form_field_outer").find(".form_field_outer_row").length + 1;
+      $(".form_field_outer").append(`
+          <div class="row form_field_outer_row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control w_90" name="mobileb_no[]" id="mobileb_no_${index}" placeholder="Enter mobiel no." />
+              </div>
+              <div class="form-group col-md-4">
+                <select name="no_type[]" id="no_type_${index}" class="form-control" >
+                  <option>--Select type--</option>
+                  <option>100%</option>
+                  <option>99%</option>
+                  <option>98%</option>
+                  <option>97%</option>
+                  <option>96%</option>
+                  <option>95%</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2 add_del_btn_outer">
+                <button class="btn_round add_node_btn_frm_field" title="Copy or clone this row">
+                  <i class="fas fa-copy"></i>
+                </button>
+
+                <button class="btn_round remove_node_btn_frm_field" disabled>
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </div>
+        `);
+
+      $(".form_field_outer").find(".remove_node_btn_frm_field:not(:first)").prop("disabled", false);
+      $(".form_field_outer").find(".remove_node_btn_frm_field").first().prop("disabled", true);
+    });
+ });
+
+
+    ///======Clone method
+$(document).ready(function(){
+    $("body").on("click", ".add_node_btn_frm_field", function (e) {
+      var index = $(e.target).closest(".form_field_outer").find(".form_field_outer_row").length + 1;
+      var cloned_el = $(e.target).closest(".form_field_outer_row").clone(true);
+
+      $(e.target).closest(".form_field_outer").last().append(cloned_el).find(".remove_node_btn_frm_field:not(:first)").prop("disabled", false);
+
+      $(e.target).closest(".form_field_outer").find(".remove_node_btn_frm_field").first().prop("disabled", true);
+
+    
+      //change id
+      $(e.target).closest(".form_field_outer").find(".form_field_outer_row").last().find("input[type='text']").attr("id", "mobileb_no_"+index);
+
+      $(e.target).closest(".form_field_outer").find(".form_field_outer_row").last().find("select").attr("id", "no_type_"+index);
+
+      console.log(cloned_el);
+      //count++;
+    });
+ });
+
+
+$(document).ready(function(){
+    //===== delete the form fieed row
+    $("body").on("click", ".remove_node_btn_frm_field", function () {
+      $(this).closest(".form_field_outer_row").remove();
+      console.log("success");
+    });
+  });
+
+
+
+</script>
+    
+<!--<div class="tacbox">
+  <input type="checkbox" />
+  I agree to these <a href="#">Terms and Conditions</a>.
+</div>
+-->
+<div class="tacbox">
+  <input id="checkbox" type="checkbox" />
+  <label for="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label>
+</div>
+<!--
+<label class="tacbox">
+  <input type="checkbox" />
+  I agree to these <a href="#">Terms and Conditions</a>.
+</label>
+
+<label for="taccheck" class="tacbox">
+  <input id="taccheck" type="checkbox" />
+  I agree to these <a href="#">Terms and Conditions</a>.
+</label>
+.tacbox {
+  display:block;
+  padding: 1em;
+  margin: 2em;
+  border: 3px solid #ddd;
+  background-color: #eee;
+  max-width: 800px;
+}
+
+input {
+  height: 2em;
+  width: 2em;
+  vertical-align: middle;
+}
+/*
+label {
+  outline: 2px dotted #f00;
+}
+
+/*
+label:after {
+  content: attr(for);
+}*/
+
+  <!-- Code by w3codegenerator.com -->
+<form class="generated-form"  method="GET" action="submit.php"  target="_self">
+<fieldset>
+ 
+
+</fieldset>
+
+</form>
+
+  </body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Website</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="container">
+			<form action="" class="m-auto" style="max-width:600px">
+				<hr class="my-4" />
+				<h3 class="my-4">ENTER THE DIGITAL SIGNATURE - references can be found in the signature file</h3>
+				<hr class="my-4" />
+				<div class="form-group mb-3 row"><label for="save-and-go-to-the-payment-page3" class="col-md-5 col-form-label"></label>
+					<div class="col-md-7"><button class="btn btn-primary" type="submit">SAVE AND GO TO THE PAYMENT PAGE!</button></div>
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>
